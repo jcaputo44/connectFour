@@ -24,7 +24,8 @@ body {
   
   section {
     display: grid;
-    grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
+    cursor: pointer;
+    grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
     grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
     margin: -45vmin 6vmin 0 0;
     user-select: none; 
