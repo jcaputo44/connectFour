@@ -1,0 +1,43 @@
+body {
+    height: 100vh;
+    margin: 0;
+  }
+  
+  header {
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    background-color: beige;
+    color: black;
+    padding: 3vmin;
+    font-size: 10vmin;
+    user-select: none; 
+    /* font-family: 'Lobster two'; */
+  }
+  
+  main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige; 
+  }
+  
+  section {
+    display: grid;
+    grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
+    grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
+    margin: -45vmin 6vmin 0 0;
+    user-select: none; 
+    justify-content: center;
+    /* font-family: 'lobster two';
+    font-size: 14vmin; */
+  }
+  
+  div {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(209, 91, 27);
+    margin: 1rem;
+    margin-top: 2rem;
+    border-radius: 50%;
+  }
