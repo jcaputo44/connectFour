@@ -110,6 +110,8 @@ let winner; // track game status, null, 1 or -1, t for tie
 
 let circEls = Array.from(document.querySelectorAll('section > div'));
 
+const message = document.querySelector('footer');
+
 //----event listeners-----//
 
 document.querySelector('section')
@@ -117,25 +119,32 @@ document.querySelector('section')
       const idx = circEls.indexOf(evt.target);
       if (idx === -1) return;
       console.log(idx);
+      board[idx] = 1;
+      render();
     });
 
 
 //-----functions------//
 
-// init();
+init();
 
-// function init() {
-//     board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-//     turn = 1;
-//     winner = null;
-//     render();
-// }
+function init() {
+    // board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+    board = new Array (42).fill(null);
+    turn = 1;
+    winner = null;
+    render();
+}
 
-// renderBoard()
-
-// renderTurn()
-
-// function render() {
-//   renderBoard(); 
-//   renderTurn();
-// };
+function render() {
+    renderBoard(); 
+    // renderTurn();
+  };
+  
+  function renderBoard() {
+    board.forEach(function(circ, idx) {
+        circEls[idx].style.backgroundColor = chips[circ];
+    });
+  };
+  
+  // renderTurn()

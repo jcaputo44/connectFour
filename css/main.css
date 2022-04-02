@@ -14,6 +14,17 @@ body {
     /* font-family: 'Lobster two'; */
   }
   
+  footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: beige;
+    color: black;
+    font-size: 6vmin;
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-top: -40vmin;
+  }
+  
   main {
     height: 100%;
     display: flex;
@@ -27,7 +38,7 @@ body {
     cursor: pointer;
     grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
     grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
-    margin: -45vmin 6vmin 0 0;
+    margin: -55vmin 6vmin 0 0;
     user-select: none; 
     justify-content: center;
     /* font-family: 'lobster two';
@@ -42,3 +53,15 @@ body {
     margin-top: 2rem;
     border-radius: 50%;
   }
+
+  /* h2 {
+    display: flex;
+    grid-template-columns: 10vmin;
+    margin: auto;
+    user-select: none; 
+    justify-content: center;
+    background-color: beige;
+    color: black;
+    font-size: 5vmin;
+    font-family: 'Gloria Hallelujah', cursive;
+  } */
