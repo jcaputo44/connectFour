@@ -119,7 +119,9 @@ document.querySelector('section')
       const idx = circEls.indexOf(evt.target);
       if (idx === -1) return;
       console.log(idx);
-      board[idx] = 1;
+      board[idx] = turn;
+      turn = turn * -1;
+      // board[idx] = 1 ? -1 : 1;
       render();
     });
 
