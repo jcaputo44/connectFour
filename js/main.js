@@ -1,9 +1,9 @@
 // ----constants----//
 
 const chips = {
-  '1': 'blue',
-  '-1': 'green',
-  'null': 'red'
+  '1': 'rgb(2, 90, 255)',
+  '-1': 'rgb(2, 155, 2)',
+  'null': 'rgb(235, 139, 87)'
 };
 
 const winningCombos = [
@@ -117,11 +117,10 @@ const message = document.querySelector('footer');
 document.querySelector('section')
     .addEventListener('click', function(evt) {
       const idx = circEls.indexOf(evt.target);
-      if (idx === -1) return;
+      if (idx === -1 || board[idx]) return;
       console.log(idx);
       board[idx] = turn;
       turn = turn * -1;
-      // board[idx] = 1 ? -1 : 1;
       render();
     });
 
@@ -131,7 +130,6 @@ document.querySelector('section')
 init();
 
 function init() {
-    // board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
     board = new Array (42).fill(null);
     turn = 1;
     winner = null;
@@ -149,4 +147,10 @@ function render() {
     });
   };
   
+  function getWinner() {
+    for (let i = 0; i < winningCombos.length; i++) {
+      if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] + board[winningCombos[i][3]]) === 4)
+       return board[winningCombos[i][0]];
+      }
+  };
   // renderTurn()

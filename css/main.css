@@ -1,6 +1,7 @@
 body {
     height: 100vh;
     margin: 0;
+    background-color: beige;
   }
   
   header {
@@ -11,19 +12,18 @@ body {
     padding: 3vmin;
     font-size: 10vmin;
     user-select: none; 
-    /* font-family: 'Lobster two'; */
   }
   
-  footer {
+  /* footer {
     display: flex;
     justify-content: center;
     text-align: center;
     background-color: beige;
     color: black;
-    font-size: 6vmin;
+    font-size: 5vmin;
     font-family: 'Gloria Hallelujah', cursive;
-    margin-top: -40vmin;
-  }
+    margin-top: -63vmin;
+  } */
   
   main {
     height: 100%;
@@ -38,30 +38,70 @@ body {
     cursor: pointer;
     grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
     grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
-    margin: -55vmin 6vmin 0 0;
+    margin: -100vmin 6vmin 0 0;
     user-select: none; 
     justify-content: center;
-    /* font-family: 'lobster two';
-    font-size: 14vmin; */
   }
   
   div {
     width: 3rem;
     height: 3rem;
-    background-color: rgb(209, 91, 27);
+    background-color: rgb(235, 139, 87);
     margin: 1rem;
     margin-top: 2rem;
     border-radius: 50%;
   }
 
-  /* h2 {
+  h3 {
+    color: rgb(2, 155, 2);
+  }
+
+  .container1 {
     display: flex;
-    grid-template-columns: 10vmin;
-    margin: auto;
+    flex-direction: column;
+    grid-template-columns: 20vmin;
+    margin: 5vmin 128vmin 0 20vmin;
     user-select: none; 
     justify-content: center;
+    align-items: center;
     background-color: beige;
     color: black;
-    font-size: 5vmin;
+    font-size: 4vmin;
     font-family: 'Gloria Hallelujah', cursive;
-  } */
+  }
+
+  #chip1 {
+    width: 3rem;
+    height: 3rem;
+    background-color: width: 3rem;
+    height: 3rem;
+    background-color: rgb(2, 90, 225);
+    margin: 1rem;
+    margin-top: 2rem;
+    border-radius: 50%;
+    margin: 1rem;
+    margin-top: 1vmin;
+    border-radius: 50%;
+  }
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 20vmin;
+    margin: -22vmin 0vmin 0 105vmin;
+    user-select: none; 
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    color: black;
+    font-size: 4vmin;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
+
+  #chip2 {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(2, 155, 2);
+    margin: 1rem;
+    margin-top: 1vmin;
+    border-radius: 50%;
+  }
