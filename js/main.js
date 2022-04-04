@@ -3,8 +3,28 @@
 const chips = {
   '1': 'rgb(2, 90, 255)',
   '-1': 'rgb(2, 155, 2)',
-  'null': 'rgb(235, 139, 87)'
+  'null': 'rgb(235, 139, 87)',
 };
+
+//put in reverse order
+const columns = [
+  [35,28,21,14,7,0],
+  [36,29,22,15,8,1],
+  [37,30,23,16,9,2],
+  [38,31,24,17,10,3],
+  [39,32,25,18,11,4],
+  [40,33,26,19,12,5],
+  [41,34,27,20,13,6]
+]
+  
+//   [0,7,14,21,28,35],
+//   [1,8,15,22,29,36],
+//   [2,9,16,23,30,37],
+//   [3,10,17,24,31,38],
+//   [4,11,18,25,32,39],
+//   [5,12,19,26,33,40],
+//   [6,13,20,27,34,41]
+// ]
 
 const winningCombos = [
   [0,1,2,3],
@@ -101,16 +121,27 @@ const winningCombos = [
 
 // ----state (variables)----//
 
-let board; //array of 36 Els
+let board; //array of 42 Els
 let turn; //who's turn? 1 or -1
 let winner; // track game status, null, 1 or -1, t for tie
-
+let targetedColumn = [];
 
 //-----cache element references----//
 
 let circEls = Array.from(document.querySelectorAll('section.board > div'));
 
-const message = document.querySelector('footer');
+let p1Token = document.getElementById('chip1')
+let p2Token = document.getElementById('chip2')
+
+// let column1 = Array.from(document.querySelectorAll('section.board > div.column1'));
+// let column2 = Array.from(document.querySelectorAll('section.board > div.column2'));
+// let column3 = Array.from(document.querySelectorAll('section.board > div.column3'));
+// let column4 = Array.from(document.querySelectorAll('section.board > div.column4'));
+// let column5 = Array.from(document.querySelectorAll('section.board > div.column5'));
+// let column6 = Array.from(document.querySelectorAll('section.board > div.column6'));
+// let column7 = Array.from(document.querySelectorAll('section.board > div.column7'));
+
+// const message = document.querySelector('footer');
 
 //----event listeners-----//
 
@@ -120,6 +151,13 @@ document.querySelector('section.board')
       if (idx === -1 || board[idx] || 
       (winner !== null && winner !== undefined)) return;
       console.log(idx);
+      console.log(evt.target);
+      for (let i = 0; i < columns.length; i++) {
+        for (let j = 0; j < columns[i].length; j++) {
+          if (idx === columns[i][j]) 
+          targetedColumn = columns[i];
+        }
+      }
       board[idx] = turn;
       turn = turn * -1;
       winner = getWinner();
@@ -142,14 +180,23 @@ function render() {
     renderBoard(); 
     // renderTurn();
   };
-  function renderTurn() {
+  // function renderTurn() {
     
-  }
+  // }
   
   function renderBoard() {
+    console.log(targetedColumn);
     board.forEach(function(circ, idx) {
         circEls[idx].style.backgroundColor = chips[circ];
+    // targetedColumn.forEach(function(targ, idx))
     });
+    if (turn === 1) {
+      p2Token.style.backgroundColor = 'beige';
+      p1Token.style.backgroundColor = 'rgb(2, 90, 255)';
+    } else if (turn === -1) {
+      p1Token.style.backgroundColor = 'beige';
+      p2Token.style.backgroundColor = 'rgb(2, 155, 2)';
+    }
   };
   
   function getWinner() {
