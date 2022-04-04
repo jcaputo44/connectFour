@@ -117,7 +117,8 @@ const message = document.querySelector('footer');
 document.querySelector('section.board')
     .addEventListener('click', function(evt) {
       const idx = circEls.indexOf(evt.target);
-      if (idx === -1 || board[idx]) return;
+      if (idx === -1 || board[idx] || 
+      (winner !== null && winner !== undefined)) return;
       console.log(idx);
       board[idx] = turn;
       turn = turn * -1;
@@ -157,34 +158,5 @@ function render() {
         board[winningCombos[i][2]] + board[winningCombos[i][3]]) === 4)
         return board[winningCombos[i][0]];
       }
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      //     let slot1 = board[winningCombos[i][0]];
-      //     let slot2 = board[winningCombos[i][1]];
-      //     let slot3 = board[winningCombos[i][2]];
-      //     let slot4 = board[winningCombos[i][3]];
-      
-      //   if (slot1.contains('1') && slot2.contains('1') &&
-      //       slot3.contains('1') && slot4.contains('1') 
-      //   )
-      //   console.log(winner);
-      //  return winner = '1';
-      // }
-    
-    // {
   };
  
