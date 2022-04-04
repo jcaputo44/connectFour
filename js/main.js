@@ -108,19 +108,20 @@ let winner; // track game status, null, 1 or -1, t for tie
 
 //-----cache element references----//
 
-let circEls = Array.from(document.querySelectorAll('section > div'));
+let circEls = Array.from(document.querySelectorAll('section.board > div'));
 
 const message = document.querySelector('footer');
 
 //----event listeners-----//
 
-document.querySelector('section')
+document.querySelector('section.board')
     .addEventListener('click', function(evt) {
       const idx = circEls.indexOf(evt.target);
       if (idx === -1 || board[idx]) return;
       console.log(idx);
       board[idx] = turn;
       turn = turn * -1;
+      winner = getWinner();
       render();
     });
 
@@ -132,7 +133,7 @@ init();
 function init() {
     board = new Array (42).fill(null);
     turn = 1;
-    winner = null;
+    winner = null; 
     render();
 }
 
@@ -140,6 +141,9 @@ function render() {
     renderBoard(); 
     // renderTurn();
   };
+  function renderTurn() {
+    
+  }
   
   function renderBoard() {
     board.forEach(function(circ, idx) {
@@ -149,8 +153,38 @@ function render() {
   
   function getWinner() {
     for (let i = 0; i < winningCombos.length; i++) {
-      if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] + board[winningCombos[i][3]]) === 4)
-       return board[winningCombos[i][0]];
+      if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + 
+        board[winningCombos[i][2]] + board[winningCombos[i][3]]) === 4)
+        return board[winningCombos[i][0]];
       }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      //     let slot1 = board[winningCombos[i][0]];
+      //     let slot2 = board[winningCombos[i][1]];
+      //     let slot3 = board[winningCombos[i][2]];
+      //     let slot4 = board[winningCombos[i][3]];
+      
+      //   if (slot1.contains('1') && slot2.contains('1') &&
+      //       slot3.contains('1') && slot4.contains('1') 
+      //   )
+      //   console.log(winner);
+      //  return winner = '1';
+      // }
+    
+    // {
   };
-  // renderTurn()
+ 

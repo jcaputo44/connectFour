@@ -33,7 +33,7 @@ body {
     background-color: beige; 
   }
   
-  section {
+  section.board {
     display: grid;
     cursor: pointer;
     grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
@@ -52,9 +52,9 @@ body {
     border-radius: 50%;
   }
 
-  h3 {
+  /* h3 {
     color: rgb(2, 155, 2);
-  }
+  } */
 
   .container1 {
     display: flex;
