@@ -149,15 +149,7 @@ document.querySelector('section.board')
           targetedColumn = columns[i];
         }
       }
-      const columns = [
-        [35,28,21,14,7,0],
-        [36,29,22,15,8,1],
-        [37,30,23,16,9,2],
-        [38,31,24,17,10,3],
-        [39,32,25,18,11,4],
-        [40,33,26,19,12,5],
-        [41,34,27,20,13,6]
-      ]
+      
 
       // getColumn();
       // renderBoard();
@@ -208,22 +200,21 @@ function render() {
         if (board[targetedColumn[i]] === null) {
           board[targetedColumn[i]] = turn;
           circEls[targetedColumn[i]].style.backgroundColor = chips[turn]; 
+          if (turn === -1) {
+            p2Token.style.backgroundColor = 'beige';
+            p1Token.style.backgroundColor = 'rgb(2, 90, 255)';
+          } else if (turn === 1) {
+            p1Token.style.backgroundColor = 'beige';
+            p2Token.style.backgroundColor = 'rgb(2, 155, 2)';
+          }
             break;
           // console.log(circEls[targ]);
           //  console.log(board[targ]);
 
         }
-      else console.log('hello');
       } 
 
     // });
-    if (turn === 1) {
-      p2Token.style.backgroundColor = 'beige';
-      p1Token.style.backgroundColor = 'rgb(2, 90, 255)';
-    } else if (turn === -1) {
-      p1Token.style.backgroundColor = 'beige';
-      p2Token.style.backgroundColor = 'rgb(2, 155, 2)';
-    }
   };
   
   function getWinner() {
