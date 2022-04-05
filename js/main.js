@@ -16,15 +16,6 @@ const columns = [
   [40,33,26,19,12,5],
   [41,34,27,20,13,6]
 ]
-  
-//   [0,7,14,21,28,35],
-//   [1,8,15,22,29,36],
-//   [2,9,16,23,30,37],
-//   [3,10,17,24,31,38],
-//   [4,11,18,25,32,39],
-//   [5,12,19,26,33,40],
-//   [6,13,20,27,34,41]
-// ]
 
 const winningCombos = [
   [0,1,2,3],
@@ -150,18 +141,30 @@ document.querySelector('section.board')
       const idx = circEls.indexOf(evt.target);
       if (idx === -1 || board[idx] || 
       (winner !== null && winner !== undefined)) return;
-      console.log(idx);
-      console.log(evt.target);
+      // console.log(idx);
+      // console.log(evt.target);
       for (let i = 0; i < columns.length; i++) {
         for (let j = 0; j < columns[i].length; j++) {
           if (idx === columns[i][j]) 
           targetedColumn = columns[i];
         }
       }
-      board[idx] = turn;
+      const columns = [
+        [35,28,21,14,7,0],
+        [36,29,22,15,8,1],
+        [37,30,23,16,9,2],
+        [38,31,24,17,10,3],
+        [39,32,25,18,11,4],
+        [40,33,26,19,12,5],
+        [41,34,27,20,13,6]
+      ]
+
+      // getColumn();
+      // renderBoard();
+      // board[idx] = turn;
+      render();
       turn = turn * -1;
       winner = getWinner();
-      render();
     });
 
 
@@ -180,16 +183,40 @@ function render() {
     renderBoard(); 
     // renderTurn();
   };
-  // function renderTurn() {
-    
-  // }
+ 
+
+// function getColumn() {
+//   for (let i = 0; i < columns.length; i++) {
+//     for (let j = 0; j < columns[i].length; j++) {
+//       if (idx === columns[i][j]) 
+//       targetedColumn = columns[i];
+//     }
+//   }
+// }
+
+// function handleMove() {
+
+// }
   
   function renderBoard() {
     console.log(targetedColumn);
-    board.forEach(function(circ, idx) {
-        circEls[idx].style.backgroundColor = chips[circ];
-    // targetedColumn.forEach(function(targ, idx))
-    });
+    // board.forEach(function(circ, idx) {
+      // circEls[idx].style.backgroundColor = chips[circ]; 
+      // targetedColumn.forEach(function(targ, idx){
+      for (let i = 0; i < targetedColumn.length; i++) {
+        // if (board[targetedColumn[i]] !== null) console.log('hello')
+        if (board[targetedColumn[i]] === null) {
+          board[targetedColumn[i]] = turn;
+          circEls[targetedColumn[i]].style.backgroundColor = chips[turn]; 
+            break;
+          // console.log(circEls[targ]);
+          //  console.log(board[targ]);
+
+        }
+      else console.log('hello');
+      } 
+
+    // });
     if (turn === 1) {
       p2Token.style.backgroundColor = 'beige';
       p1Token.style.backgroundColor = 'rgb(2, 90, 255)';
