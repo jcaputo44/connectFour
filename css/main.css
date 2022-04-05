@@ -14,16 +14,16 @@ body {
     user-select: none; 
   }
   
-  /* footer {
+  h3 {
     display: flex;
     justify-content: center;
     text-align: center;
     background-color: beige;
     color: black;
-    font-size: 5vmin;
+    font-size: 8vmin;
     font-family: 'Gloria Hallelujah', cursive;
-    margin-top: -63vmin;
-  } */
+    margin-top: -85vmin;
+  }
   
   main {
     height: 100%;
@@ -105,3 +105,12 @@ body {
     margin-top: 1vmin;
     border-radius: 50%;
   }
+
+  article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 52vmin;
+    margin-right: 0vmin;
+  }
+  

@@ -124,17 +124,16 @@ let circEls = Array.from(document.querySelectorAll('section.board > div'));
 let p1Token = document.getElementById('chip1')
 let p2Token = document.getElementById('chip2')
 
-// let column1 = Array.from(document.querySelectorAll('section.board > div.column1'));
-// let column2 = Array.from(document.querySelectorAll('section.board > div.column2'));
-// let column3 = Array.from(document.querySelectorAll('section.board > div.column3'));
-// let column4 = Array.from(document.querySelectorAll('section.board > div.column4'));
-// let column5 = Array.from(document.querySelectorAll('section.board > div.column5'));
-// let column6 = Array.from(document.querySelectorAll('section.board > div.column6'));
-// let column7 = Array.from(document.querySelectorAll('section.board > div.column7'));
+let message = document.querySelector('h3');
 
-// const message = document.querySelector('footer');
+const resetButton = document.getElementById('resetBtn');
+
 
 //----event listeners-----//
+
+resetButton.addEventListener('click', function(evt) {
+  init();
+}); 
 
 document.querySelector('section.board')
     .addEventListener('click', function(evt) {
@@ -149,18 +148,23 @@ document.querySelector('section.board')
           targetedColumn = columns[i];
         }
       }
-      
-
-      // getColumn();
-      // renderBoard();
-      // board[idx] = turn;
       render();
       turn = turn * -1;
       winner = getWinner();
-    });
+      if (winner === 1) {
+        message.innerHTML = 'Player 1 Wins!'; 
+      } else if ( winner === -1) {
+        message.innerHTML = 'Player 2 Wins!';
+      } else {
+        message.innerHTML = '';
+      }
+
+  });
 
 
 //-----functions------//
+
+
 
 init();
 
@@ -168,30 +172,25 @@ function init() {
     board = new Array (42).fill(null);
     turn = 1;
     winner = null; 
+    targetedColumn = [];
+    message.innerHTML = '';
+    circEls.forEach(function(circ) {
+      circ.style.backgroundColor = chips['null'];
+      p1Token.style.backgroundColor = 'rgb(2, 90, 255)';
+      p2Token.style.backgroundColor = 'rgb(2, 155, 2)';
+    });
     render();
 }
 
+
+
 function render() {
     renderBoard(); 
-    // renderTurn();
+  
   };
- 
-
-// function getColumn() {
-//   for (let i = 0; i < columns.length; i++) {
-//     for (let j = 0; j < columns[i].length; j++) {
-//       if (idx === columns[i][j]) 
-//       targetedColumn = columns[i];
-//     }
-//   }
-// }
-
-// function handleMove() {
-
-// }
   
   function renderBoard() {
-    console.log(targetedColumn);
+    // console.log(targetedColumn);
     // board.forEach(function(circ, idx) {
       // circEls[idx].style.backgroundColor = chips[circ]; 
       // targetedColumn.forEach(function(targ, idx){
@@ -208,13 +207,8 @@ function render() {
             p2Token.style.backgroundColor = 'rgb(2, 155, 2)';
           }
             break;
-          // console.log(circEls[targ]);
-          //  console.log(board[targ]);
-
         }
       } 
-
-    // });
   };
   
   function getWinner() {
@@ -224,4 +218,6 @@ function render() {
         return board[winningCombos[i][0]];
       }
   };
+
+  
  
