@@ -109,7 +109,6 @@ const winningCombos = [
   [3, 9, 15, 21],
 ];
 
-
 // ----state (variables)----//
 
 let board; //array of 42 Els
@@ -127,7 +126,6 @@ let p2Token = document.getElementById('chip2')
 let message = document.querySelector('h3');
 
 const resetButton = document.getElementById('resetBtn');
-
 
 //----event listeners-----//
 
@@ -155,16 +153,16 @@ document.querySelector('section.board')
       message.innerHTML = 'Player 1 Wins!';
     } else if (winner === -1) {
       message.innerHTML = 'Player 2 Wins!';
+    } else if (winner === 't') {
+      message.innerHTML = 'Rematch!?';
     } else {
       message.innerHTML = '';
+
     }
 
   });
 
-
 //-----functions------//
-
-
 
 init();
 
@@ -182,20 +180,13 @@ function init() {
   render();
 }
 
-
-
 function render() {
   renderBoard();
 
 };
 
 function renderBoard() {
-  // console.log(targetedColumn);
-  // board.forEach(function(circ, idx) {
-  // circEls[idx].style.backgroundColor = chips[circ]; 
-  // targetedColumn.forEach(function(targ, idx){
   for (let i = 0; i < targetedColumn.length; i++) {
-    // if (board[targetedColumn[i]] !== null) console.log('hello')
     if (board[targetedColumn[i]] === null) {
       board[targetedColumn[i]] = turn;
       circEls[targetedColumn[i]].style.backgroundColor = chips[turn];
@@ -217,6 +208,8 @@ function getWinner() {
       board[winningCombos[i][2]] + board[winningCombos[i][3]]) === 4)
       return board[winningCombos[i][0]];
   }
+  if (board.includes(null)) return null;
+  return 't';
 };
 
 
