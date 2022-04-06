@@ -1,6 +1,5 @@
 body {
     height: 100vh;
-    margin: 0;
     background-color: beige;
   }
   
@@ -34,23 +33,34 @@ body {
     align-content: center;
     background-color: beige; 
   }
+
+  .gameBoard {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
   
   section.board {
     display: grid;
     cursor: pointer;
     grid-template-columns: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
     grid-template-rows: 10vmin 10vmin 10vmin 10vmin 10vmin 10vmin;
-    margin: 15vmin;
+    /* margin: 15vmin;
+    margin-top: 12vmin;
+    margin-left: 0; */
     user-select: none; 
-    justify-content: center;
+    width: 100%;
   }
   
-  div {
+  section > div {
     width: 3.3rem;
     height: 3.3rem;
     background-color: rgb(235, 139, 87);
     border-radius: 50%;
-    margin-top: -17vmin;
+    /* margin-top: -17vmin; */
   }
 
   /* h3 {
@@ -62,10 +72,10 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-top: -50vmin;
+    /* margin-top: -50vmin; */
     user-select: none; 
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     background-color: beige;
     color: black;
     font-size: 4vmin;
@@ -87,10 +97,10 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin: -50vmin 0 0 0;
+    /* margin: -50vmin 0 0 0; */
     user-select: none; 
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-color: beige;
     color: black;
     font-size: 4vmin;
@@ -108,9 +118,33 @@ body {
 
   article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 52vmin;
-    margin-right: 0vmin;
+    align-content: flex-start;
+    margin-top: 0;
+    margin-right: 0;
   }
   
+  button {
+    background-color: beige;
+    border-radius: 85%;
+    height: 8vmin;
+  }
+  /* footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50vmin;
+    margin-right: .6vmin;
+    margin-left: 95vmin;
+  }
+  
+  button {
+    background-color: beige;
+    border-radius: 85%;
+    height: 9vmin;
+    width: 9vmin;
+    font-size: 2.5vmin;
+    font-family: 'Gloria Hallelujah', cursive;
+  } */
+
