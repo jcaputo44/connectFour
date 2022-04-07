@@ -127,4 +127,9 @@ button {
   width: 16vmin;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 3vmin;
+  cursor: pointer;
+}
+
+button:hover {
+  color: grey;
 }
