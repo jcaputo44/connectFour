@@ -20,11 +20,7 @@ h3 {
   align-content: center;
   background-color: beige;
   color: rgb(56, 54, 54);
-<<<<<<< HEAD
   font-size: 14vmin;
-=======
-  font-size: 13vmin;
->>>>>>> main
   font-family: 'Gloria Hallelujah', cursive;
   margin-top: -92vmin;
 }
@@ -120,11 +116,7 @@ article {
   flex-direction: column;
   justify-content: center;
   align-content: flex-start;
-<<<<<<< HEAD
   margin-top: 3.5vmin;
-=======
-  margin-top: 3vmin;
->>>>>>> main
   margin-right: 0;
 }
 
