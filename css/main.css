@@ -17,9 +17,14 @@ h3 {
   display: flex;
   justify-content: center;
   text-align: center;
+  align-content: center;
   background-color: beige;
   color: rgb(56, 54, 54);
+<<<<<<< HEAD
   font-size: 14vmin;
+=======
+  font-size: 13vmin;
+>>>>>>> main
   font-family: 'Gloria Hallelujah', cursive;
   margin-top: -92vmin;
 }
@@ -54,8 +59,8 @@ section.board {
 }
 
 section>div {
-  width: 3.3rem;
-  height: 3.3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background-color: rgb(235, 139, 87);
   border-radius: 50%;
 }
@@ -77,8 +82,8 @@ section>div {
 }
 
 #chip1 {
-  width: 3rem;
-  height: 3rem;
+  width: 3.3rem;
+  height: 3.3rem;
   background-color: rgb(2, 90, 225);
   margin: 1rem;
   margin-top: .5rem;
@@ -102,8 +107,8 @@ section>div {
 }
 
 #chip2 {
-  width: 3rem;
-  height: 3rem;
+  width: 3.3rem;
+  height: 3.3rem;
   background-color: rgb(2, 155, 2);
   margin: 1rem;
   margin-top: 1vmin;
@@ -115,7 +120,11 @@ article {
   flex-direction: column;
   justify-content: center;
   align-content: flex-start;
+<<<<<<< HEAD
   margin-top: 3.5vmin;
+=======
+  margin-top: 3vmin;
+>>>>>>> main
   margin-right: 0;
 }
 
@@ -123,5 +132,7 @@ button {
   background-color: beige;
   border-radius: 85%;
   height: 8vmin;
-  margin: 0;
+  width: 16vmin;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 3vmin;
 }
