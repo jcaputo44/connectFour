@@ -4,7 +4,7 @@
    <h5>Joseph Caputo </h5>                              
 </div>
 
-<h1>:open_book: Description</h1>
+<h1>:books: Description</h1>
 <p>Connect four is a classic household board game where players alternate dropping their color of chip into the board in an attmept to line up four in a row. It is the responsibilty of both players to block their opponent from connecting four chips, while simultaneously attempting to connect four of their own. </p>
 
 ## :camera_flash: Screenshots
