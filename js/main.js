@@ -6,7 +6,6 @@ const chips = {
   'null': 'rgb(235, 139, 87)',
 };
 
-//put in reverse order
 const columns = [
   [35, 28, 21, 14, 7, 0],
   [36, 29, 22, 15, 8, 1],
@@ -111,9 +110,9 @@ const winningCombos = [
 
 // ----state (variables)----//
 
-let board; //array of 42 Els
-let turn; //who's turn? 1 or -1
-let winner; // track game status, null, 1 or -1, t for tie
+let board;
+let turn; 
+let winner; 
 let targetedColumn = [];
 
 //-----cache element references----//
@@ -138,8 +137,6 @@ document.querySelector('section.board')
     const idx = circEls.indexOf(evt.target);
     if (idx === -1 || board[idx] ||
       (winner !== null && winner !== undefined)) return;
-    // console.log(idx);
-    // console.log(evt.target);
     for (let i = 0; i < columns.length; i++) {
       for (let j = 0; j < columns[i].length; j++) {
         if (idx === columns[i][j])
@@ -157,9 +154,7 @@ document.querySelector('section.board')
       message.innerHTML = 'Rematch!?';
     } else {
       message.innerHTML = '';
-
     }
-
   });
 
 //-----functions------//
@@ -211,5 +206,3 @@ function getWinner() {
   if (board.includes(null)) return null;
   return 't';
 };
-
-
